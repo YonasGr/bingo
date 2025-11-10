@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ethio Bingo</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="screen active">
+            <div class="loader"></div>
+            <p>Loading Ethio Bingo...</p>
+        </div>
+
+        <!-- Lobby Screen -->
+        <div id="lobby-screen" class="screen">
+            <header>
+                <h1>🎉 Ethio Bingo</h1>
+                <p class="subtitle">Ready to play?</p>
+            </header>
+            
+            <div class="container">
+                <div class="room-info" id="room-info" style="display: none;">
+                    <h3>Room: <span id="room-code"></span></h3>
+                    <p>Variant: <span id="room-variant"></span></p>
+                    <p>Pattern: <span id="room-pattern"></span></p>
+                </div>
+
+                <div class="players-list" id="players-list">
+                    <h3>Players</h3>
+                    <div id="players-container"></div>
+                </div>
+
+                <div class="actions">
+                    <button id="btn-create" class="btn btn-primary">Create Room</button>
+                    <button id="btn-quick-play" class="btn btn-secondary">Quick Play</button>
+                    <button id="btn-start" class="btn btn-success" style="display: none;">Start Game</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <header class="game-header">
+                <div class="called-number">
+                    <div class="last-number" id="last-number">-</div>
+                    <p>Last Called</p>
+                </div>
+                <div class="game-stats">
+                    <div>Numbers: <span id="numbers-called">0</span></div>
+                    <div>Pattern: <span id="current-pattern">Line</span></div>
+                </div>
+            </header>
+
+            <div class="called-numbers-strip" id="called-numbers-strip"></div>
+
+            <div class="card-container" id="card-container">
+                <!-- Bingo card will be rendered here -->
+            </div>
+
+            <div class="game-actions">
+                <button id="btn-claim" class="btn btn-claim">🎉 BINGO!</button>
+            </div>
+        </div>
+
+        <!-- Winner Screen -->
+        <div id="winner-screen" class="screen">
+            <div class="winner-content">
+                <h1>🎊 BINGO! 🎊</h1>
+                <p class="winner-message" id="winner-message"></p>
+                <button id="btn-new-game" class="btn btn-primary">New Game</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
